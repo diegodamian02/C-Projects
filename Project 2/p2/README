@@ -1,0 +1,56 @@
+#===============================================================================
+#
+#	Project 2: Word occurrence count
+#
+#===============================================================================
+
+	[Author1]
+		Name: Yue Luo
+		NetID: yl1535
+		
+	[Author2]
+		Name: Diego Damian
+		NetID: dad405
+
+	[Table of Contents]
+	
+		- [Introduction]
+		- [Content]
+		- [Prerequisites]
+		- [Usability]
+		- [Testability]
+		- [Summary]
+
+	[Introduction]
+
+		The "Word occurrence count" project is a program designed to count the occurrences of words in text files, either standalone text files or a combination of paths contained within directories. This tool helps you quickly and easily gather statistics on word frequency in your documents.
+
+	[Content]
+		The content in this project is the following files:
+			1. words.c
+			2. Makefile
+			3. README
+
+	[Prerequisites]
+
+		For the program to run, it will need the following requirements to function correctly. Before you can use the Word occurrence count program, ensure you have installed a C compiler and a Linux or Unix-like operating system on your system (recommended). The files word.c & Makefile are needed for the program to execute. Finally, a set of test run files (.txt) is needed to prove the program to function and execute its task. 
+
+	[Usability]
+		
+		The program provides a straightforward command-line interface for users to count words in text files and directories. Users can specify multiple files and directories as arguments, making it easy to process multiple documents at once. Also, the program is designed to handle irregular hyphens within words. It ensures that hyphenated words are counted accurately without being split into multiple words e.g. (multi-task would be counted as one word). Furthermore, words including dashes, apostrophes, punctuations, and other special characters will still be processed as words and counted during the execution of the program.
+
+		To optimize memory usage, the program dynamically allocates memory for reading and processing large files. This allows it to efficiently handle files of varying sizes. In addition, our code also reallocates the size of the buffer, this is a safety method that we implemented to let the "bbuffer" size be the size of bytes the file contains, this will allow that in an extreme case if a file that contains a very long word, the program will still be able to count it and process it. Finally, users can pass directories as arguments to the program, and it will recursively count words in all text files within those directories. This feature is useful for analyzing the content of entire document collections. 
+
+	[Testability]
+
+		For its testability, we created multiple test cases that provided specific input files or directories that checked if the program produced the expected word counts and output. This includes testing cases with irregular hyphens (!@#%_?-), empty files, and large files. We also push the program to its boundaries using very large files containing very extended words and using nested directories, subdirectories, and multiple encodings. 
+
+		For error detection, we also included invalid inputs and non-existing files to prompt errors in the output. We included the following errors in the program: Unexpected Error: ErrorReadings, UnexpectedError: UnsuccessfulOpeningDirectory, UnexpectedError:InvalidFileRead, UnexpectedError: UnsuccessfulClosingDirectory, UnexpectedError: NoValidArguments & InvalidArgumentError.
+
+	[Summary]
+		
+		Our program counts and reports word frequencies in text files, handles various text encodings, supports word separation by spaces and handles common punctuation marks, identifies irregular hyphens in words, and provides the word with the maximum appearance count, sorted lexicographically. In addition, it implements unit tests, functional tests, and boundary tests to test the program with different file types sizes, and encodings. 
+
+		We encourage you to use the program by prompting the following command in your terminal:
+		make
+		./words [path of file or directory 1] [path of file or directory 2]...

@@ -1,0 +1,11 @@
+This is a simple text file for word occurrence analysis.
+Professor Menendez try to run in your main file while(1)--fork() return EXIT_SUCCESS.
+This program is great!
+Test:
+- Test
+- Word
+- Systems
+- Programming
+- Professor
+- main
+- file
